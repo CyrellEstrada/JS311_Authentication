@@ -130,11 +130,11 @@ NOTE: You may need to change and un-change something in your code in order for n
 3. Now we need to create a couple of users for our application to use. We will do this manually for now. Go to the main page of your Auth0 dashboard in your browser, select "Users & Roles" -> "User", then click "Create User". Leave the default connection type and enter an email and password for your user. For example:
 
 ```yaml
-email: test@example.com
-password: Password!
+email: test1@example.com
+password: Whatever2024
 
-test1@email.com
-testPassword1
+test2@email.com
+testPassword2
 ```
 
 Remember this information because we are about to use it again. This time go to Postman and submit a request to the `/auth/login` route that's already been created for us in this application. The full request will be a POST to `http://localhost:4001/auth/login` with the body:

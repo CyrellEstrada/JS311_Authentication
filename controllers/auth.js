@@ -1,5 +1,5 @@
-1const axios = require('axios')
-const mysql = require('mysql')
+const axios = require('axios')
+const mysql = require('mysql2')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const pool = require('../sql/connection')
@@ -28,13 +28,13 @@ const saltRounds = 10
 const login = (req, res) => {
   const { username, password } = req.body
 
-  axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
+  axios(`${process.env.AUTH0_DOMAIN}`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json'
     },
     data: {
-      grant_type: 'password',
+      grant_type: 'client_credentials',
       username: username,
       password: password,
       audience: process.env.AUTH0_IDENTITY,
